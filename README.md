@@ -61,24 +61,6 @@ terraform apply -auto-approve
 ```bash
 terraform destroy -auto-approve
 ```
-
----
-
-## **User Data Script**
-
-```bash
-#!/bin/bash
-yum update -y
-amazon-linux-extras enable docker
-amazon-linux-extras install docker -y
-systemctl start docker
-systemctl enable docker
-usermod -aG docker ec2-user
-docker run -d -p 80:80 --name nginx nginx:latest
-```
-
-This ensures Docker is installed and the Nginx container runs on startup.
-
 ---
 
 ## **Execution Steps with Screenshots**
